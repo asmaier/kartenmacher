@@ -29,7 +29,9 @@ if __name__ == '__main__':
     markers =  []
 
     with open(args.csvfile) as input:
-        for row in csv.reader(input):
+        reader = csv.reader(input)
+        next(reader, None)  # skip the headers
+        for row in reader:
             full_address = " ".join([row[int(address)].replace("\n", " ").replace("\r", " ") for address in addresses])
             if full_address.strip():
                 full_name = " ".join([row[int(name)] for name in names])
