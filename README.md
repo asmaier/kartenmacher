@@ -37,7 +37,7 @@ If you have a Google Mail account you can export your contacts with addresses to
 In Outlook CSV the first name is stored in column 0 and the last name in column 2; the full address is stored
 in column 23. Now assuming you have a file called `contacts.csv` in Outlook CSV format you can create a map from it like
 
-	$ python kartenmacher.py ~/Desktop/contacts.csv 0,2 23 map.html
+	$ python kartenmacher.py contacts.csv 0,2 23 map.html
 
 This will create a HTML file `map.html` showing an interactive map (based on Openstreetmap) with the addresses of all
 your contacts marked on the map. You can click on each marker to see the name and the address. Pretty cool, isn't it?
