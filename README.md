@@ -19,12 +19,13 @@ Usage
 -----
 
     $ python kartenmacher.py -h
-    usage: kartenmacher.py [-h] csvfile names addresses outfile
+    usage: kartenmacher.py [-h] csvfile names addresses link outfile
 
     positional arguments:
       csvfile     name of CSV file
-      names       name columns in CSV file (comma separated)
-      addresses   address columns in CSV file (comma separated)
+      names       column numbers with name information(comma separated)
+      addresses   column number with address information (comma separated)
+      link        column number with a web link
       outfile     name of output HTML file
 
     optional arguments:
