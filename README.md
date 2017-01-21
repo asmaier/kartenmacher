@@ -23,8 +23,8 @@ Usage
 
     positional arguments:
       csvfile     name of CSV file
-      names       column numbers with name information(comma separated)
-      addresses   column number with address information (comma separated)
+      names       column numbers with name information (comma separated)
+      addresses   column numbers with address information (comma separated)
       link        column number with a web link
       outfile     name of output HTML file
 
