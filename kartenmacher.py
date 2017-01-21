@@ -25,7 +25,7 @@ if __name__ == '__main__':
     parser.add_argument("csvfile", help="name of CSV file")
     parser.add_argument("names", help="column numbers with name information(comma separated)")
     parser.add_argument("addresses", help="column number with address information (comma separated)")
-    parser.add_argument("link", help="column number with a web link")
+    parser.add_argument("link", nargs="?", help="column number with a web link")
     parser.add_argument("outfile", help="name of output HTML file")
     args = parser.parse_args()
 
