@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
-
     <script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
+    
+    <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
+    <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
 
     <style>
         body {
@@ -23,7 +25,9 @@
 <div id="map"></div>
 
 <script>
-    var map = L.map('map');
+    var map = L.map('map', {
+        fullscreenControl: true}
+    );
 
     L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
             {attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
