@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kartenmacher</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
+    
+    <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
+    <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
+
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        html, body, #map {
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+<div id="map"></div>
+
+<script>
+    var map = L.map('map', {
+        fullscreenControl: true}
+    );
+
+    L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+            {attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
+
+    var markers = [];
+
+    markers.push(L.marker([55.755826, 37.6172999]).addTo(map).bindPopup('Lusсhniki-Stadion<br />Moskau, Luschnezkaja Nabereschnaja 24<br /><a target="_blank" href="http://welcome2018.com/de/guide/2412687/">http://welcome2018.com/de/guide/2412687/</a>'));
+markers.push(L.marker([55.755826, 37.6172999]).addTo(map).bindPopup('Spartak-Stadion<br />Moskau, Wolokolamskoe Chaussee 69<br /><a target="_blank" href="http://welcome2018.com/de/guide/1083981/">http://welcome2018.com/de/guide/1083981/</a>'));
+markers.push(L.marker([59.9730865, 30.2201913]).addTo(map).bindPopup('Sankt-Petersburg-Stadion<br />Sankt Petersburg, Futbolnaja Alleja 1<br /><a target="_blank" href="http://welcome2018.com/de/guide/1084061/">http://welcome2018.com/de/guide/1084061/</a>'));
+markers.push(L.marker([55.8304307, 49.06608060000001]).addTo(map).bindPopup('Kasan-Arena<br />Kasan, Prospekt Jamaschewa 115 A<br /><a target="_blank" href="http://welcome2018.com/de/guide/1084017/">http://welcome2018.com/de/guide/1084017/</a>'));
+markers.push(L.marker([55.78105, 37.62645699999999]).addTo(map).bindPopup('Fischt-Stadion<br />Adler, Olimpijskij Prospekt<br /><a target="_blank" href="http://welcome2018.com/de/guide/1084105/">http://welcome2018.com/de/guide/1084105/</a>'));
+markers.push(L.marker([48.716763, 44.529965]).addTo(map).bindPopup('Wolgograd-Arena<br />Wolgograd, Prospekt W.I.Lenina 76<br /><a target="_blank" href="http://welcome2018.com/de/guide/2245065/">http://welcome2018.com/de/guide/2245065/</a>'));
+markers.push(L.marker([56.8324733, 60.5735834]).addTo(map).bindPopup('Jekaterinburg-Arena<br />Jekaterinburg, Uliza Repina 5<br /><a target="_blank" href="http://welcome2018.com/de/guide/2244999/">http://welcome2018.com/de/guide/2244999/</a>'));
+markers.push(L.marker([54.7104264, 20.4522144]).addTo(map).bindPopup('Kaliningrad-Stadion<br />Kaliningrad, Solnetschnyj Bul‘war<br /><a target="_blank" href="http://welcome2018.com/de/guide/2245725/">http://welcome2018.com/de/guide/2245725/</a>'));
+markers.push(L.marker([56.2965039, 43.93605900000001]).addTo(map).bindPopup('Nischni-Nowgorod-Stadion<br />Nischni Nowgorod, Uliza Dolschanskaja 2 A, Geb. 1<br /><a target="_blank" href="http://welcome2018.com/de/guide/2244809/">http://welcome2018.com/de/guide/2244809/</a>'));
+markers.push(L.marker([47.2357137, 39.701505]).addTo(map).bindPopup('Rostow-Arena<br />Rostow am Don, Lewobereschnaja 2 B<br /><a target="_blank" href="http://welcome2018.com/de/guide/2244733/">http://welcome2018.com/de/guide/2244733/</a>'));
+markers.push(L.marker([53.2415041, 50.2212463]).addTo(map).bindPopup('Samara-Arena<br />Samara, Uliza Dalnjaja<br /><a target="_blank" href="http://welcome2018.com/de/guide/2244649/">http://welcome2018.com/de/guide/2244649/</a>'));
+markers.push(L.marker([54.2000477, 45.1745115]).addTo(map).bindPopup('Mordwinien-Arena<br />Saransk, Uliza Wolgogradskaja 1<br /><a target="_blank" href="http://welcome2018.com/de/guide/2244595/">http://welcome2018.com/de/guide/2244595/</a>'));
+
+    // see https://stackoverflow.com/questions/16845614/zoom-to-fit-all-markers-in-mapbox-or-leaflet
+    var group = new L.featureGroup(markers);
+    map.fitBounds(group.getBounds());
+</script>
+</body>
+</html>
