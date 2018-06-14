@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kartenmacher</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
+    
+    <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
+    <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
+
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        html, body, #map {
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+<div id="map"></div>
+
+<script>
+    var map = L.map('map', {
+        fullscreenControl: true}
+    );
+
+    L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+            {attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
+
+    var markers = [];
+
+    markers.push(L.marker([55.4253602, 38.2795522]).addTo(map).bindPopup('<h3>Argentina</h3>Bronnitsy Training Centre<br />Ulitsa Moskvoretskaya 46, Bronnitsy, Moscow Region'));
+markers.push(L.marker([55.79510519999999, 49.1479059]).addTo(map).bindPopup('<h3>Australia</h3>Training base of Aq Bars ice hockey club<br />Ulitsa Karla Marxa 71, Kazan'));
+markers.push(L.marker([55.86005300000001, 37.1982109]).addTo(map).bindPopup('<h3>Belgium</h3>Moscow Country Club<br />Nakhabino-1, Krasnogorsk District, Moscow Region'));
+markers.push(L.marker([43.560583, 39.7753702]).addTo(map).bindPopup('<h3>Brazil</h3>Swissôtel Resort Sochi Camellia<br />Kurortny Prospekt 89, Sochi'));
+markers.push(L.marker([55.71972700000001, 48.7082213]).addTo(map).bindPopup('<h3>Columbia</h3>&quot;Kazan&quot; downhill ski resort and sports &amp; health complex<br />Savino, Verkhneuslonsky District, Republic of Tatarstan'));
+markers.push(L.marker([59.758954, 30.3733473]).addTo(map).bindPopup('<h3>Costa Rica</h3>Hilton ExpoForum<br />Peterburgskoye Shosse 62, Building 1, Territoriya Pulkovskoye, Shushary, St. Petersburg'));
+markers.push(L.marker([60.6682443, 29.1632611]).addTo(map).bindPopup('<h3>Croatia</h3>Lesnaya Rapsodiya<br />Lintulskaya Alleya 1, Ilyichevo, Vyborg District, Leningrad Region'));
+markers.push(L.marker([44.9769806, 37.2750919]).addTo(map).bindPopup('<h3>Denmark</h3>Beton Brut<br />Ulitsa Verkhnyaya Doroga 120, Anapa, Krasnodar Region'));
+markers.push(L.marker([43.3201394, 45.73906119999999]).addTo(map).bindPopup('<h3>Egypt</h3>The Local Hotel, Grozny<br />Grozny, Liva Yashina St, 34'));
+markers.push(L.marker([60.16868840000001, 29.8745639]).addTo(map).bindPopup('<h3>England</h3>Forrest Mix Sport &amp; Relax<br />Ulitsa Lugovaya 10A, Repino, St. Petersburg'));
+markers.push(L.marker([55.8923876, 36.6981803]).addTo(map).bindPopup('<h3>France</h3>Hilton Garden Inn New Riga<br />Estate 1, Kostrovo, Istrinsky District, Moscow Region'));
+markers.push(L.marker([55.5141013, 37.3358069]).addTo(map).bindPopup('<h3>Germany</h3>Vatutinki Health Complex<br />Поселение Десеновское, ул. Чароитовая, владение 5, строение 1, Москва, Russland, 108818'));
+markers.push(L.marker([44.6488775, 37.9401099]).addTo(map).bindPopup('<h3>Iceland</h3>Nadezhda Resort Complex<br />Ulitsa Mira 3, Kabardinka, Gelendjik, Krasnodar Region'));
+markers.push(L.marker([55.675945, 37.334783]).addTo(map).bindPopup('<h3>Iran</h3>Bakovka<br />Ulitsa Lesnaya 16, Bakovka, Moscow Region'));
+markers.push(L.marker([55.8549815, 49.085321]).addTo(map).bindPopup('<h3>Japan</h3>FC Rubin training base<br />Ulitsa Kopylova 2, Kazan'));
+markers.push(L.marker([55.9254348, 37.9388118]).addTo(map).bindPopup('<h3>Mexico</h3>Novogorsk training base<br />Ulitsa Sokolovskaya 8, Novogorsk, Khimki Estate, Moscow Region'));
+markers.push(L.marker([51.667844, 39.2064921]).addTo(map).bindPopup('<h3>Morocco</h3>Voronezh Marriott<br />Voronezh, prosp. Revolyutsii, 38'));
+markers.push(L.marker([44.0513159, 42.8655195]).addTo(map).bindPopup('<h3>Nigeria</h3>Istochnik health retreat<br />Ulitsa Semashko 6-8, Essentuki, Stavropol Region'));
+markers.push(L.marker([54.208938, 45.126141]).addTo(map).bindPopup('<h3>Panama</h3>Olympic training centre<br />Ulitsa Pobedy 3a, Saransk'));
+markers.push(L.marker([55.945586, 37.4112755]).addTo(map).bindPopup('<h3>Peru</h3>Sheraton Moscow Sheremetyevo<br />Mezhdunarodnoye Shosse 28B, Building 5, Moscow'));
+markers.push(L.marker([43.5757968, 39.7276212]).addTo(map).bindPopup('<h3>Poland</h3>Hyatt Regency Sochi<br />Ulitsa Ordjonikidze 17, Sochi'));
+markers.push(L.marker([55.6016281, 38.1836432]).addTo(map).bindPopup('<h3>Portugal</h3>Saturn training base<br />Ulitsa Baumana 10, Kratovo, Ramenskoye District, Moscow Region'));
+markers.push(L.marker([55.890335, 37.358049]).addTo(map).bindPopup('<h3>Russia</h3>Novogorsk-Dynamo training base<br />Ulitsa Sokolovskaya 7, Novogorsk, Khimki Estate, Moscow Region'));
+markers.push(L.marker([59.93601990000001, 30.3307152]).addTo(map).bindPopup('<h3>Saudi Arabia</h3>Belmond Grand Hotel Europe<br />Sankt Petersburg, Ulitsa Mikhailovskaya 1/7'));
+markers.push(L.marker([54.5035902, 36.2041161]).addTo(map).bindPopup('<h3>Senegal</h3>SK ROYAL Kaluga<br />Ulitsa Tramplinnaya 1B, Kaluga'));
+markers.push(L.marker([54.9429971, 20.1667565]).addTo(map).bindPopup('<h3>Serbia</h3>Royal Falke Resort<br />Ulitsa Lenina 1b, Svetlogorsk, Kaliningrad Region'));
+markers.push(L.marker([45.044998, 39.03426]).addTo(map).bindPopup('<h3>Spain</h3>FC Krasnodar Academy<br />Ulitsa Zhloby 114, Krasnodar'));
+markers.push(L.marker([59.9323387, 30.3503255]).addTo(map).bindPopup('<h3>South Korea</h3>New Peterhof Hotel<br />Sankt-Peterburgsky Prospekt 34, St. Petersburg'));
+markers.push(L.marker([44.5518347, 38.054201]).addTo(map).bindPopup('<h3>Sweden</h3>Grand Hotel Kempinski<br />Ulitsa Revolutsionnaya 53, Gelendjik, Krasnodar Region'));
+markers.push(L.marker([53.4770859, 49.3200671]).addTo(map).bindPopup('<h3>Switzerland</h3>Togliatti Resort<br />Lesoparkovoye Shosse 55, Togliatti'));
+markers.push(L.marker([55.5373585, 37.1929948]).addTo(map).bindPopup('<h3>Tunisia</h3>Imperial Park Hotel &amp; Spa<br />Rogozinino, Pervomaiskoye, Moscow'));
+markers.push(L.marker([56.3588296, 44.0766797]).addTo(map).bindPopup('<h3>Uruguay</h3>Sports Centre Borsky<br />Nizhny Novgorod region, Bor town City district, Krasnogorka St, 120'));
+
+    // see https://stackoverflow.com/questions/16845614/zoom-to-fit-all-markers-in-mapbox-or-leaflet
+    var group = new L.featureGroup(markers);
+    map.fitBounds(group.getBounds());
+</script>
+</body>
+</html>
