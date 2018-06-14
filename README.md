@@ -6,7 +6,7 @@ A python script for creating an interactive HTML map from a list of addresses in
 Requirements
 ------------
 
- - Python 2.7
+ - Python 3.0
  - [geocoder library](https://pypi.python.org/pypi/geocoder)
 
 Installation
