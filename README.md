@@ -6,14 +6,18 @@ A python script for creating an interactive HTML map from a list of addresses in
 Requirements
 ------------
 
- - Python 3.0
+ - Python 3.9
+ - [pipenv](https://pipenv-fork.readthedocs.io/en/latest/install.html)
  - [geocoder library](https://pypi.python.org/pypi/geocoder)
 
 Installation
 ------------
 
     $ git clone https://github.com/asmaier/kartenmacher.git
-    $ pip3 install geocoder
+    $ pip install pipenv
+    $ pipenv install
+    $ pipenv shell
+ 
 
 Usage
 -----

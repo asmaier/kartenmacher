@@ -2,7 +2,7 @@
 
 import argparse
 import csv
-import cgi
+import html as cgi
 import geocoder
 from string import Template
 
@@ -48,7 +48,7 @@ if __name__ == '__main__':
                     full_link = "<a target=\"_blank\" href=\"{0}\">{0}</a>".format(filter_text(row[int(link)]))
                     print(full_link)
 
-                g = geocoder.google(full_address)
+                g = geocoder.osm(full_address)
                 if not g.latlng:
                     g = geocoder.yandex(full_address)
                 # print(g.latlng)
